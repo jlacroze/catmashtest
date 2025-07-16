@@ -78,6 +78,30 @@ const VotePage: React.FC = () => {
           }}
         />
         <VotePanel cats={[cats[pair[0]], cats[pair[1]]]} onVote={handleVote} />
+        {/* Feedback visuel après vote */}
+        {voted && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              background: "#fff",
+              color: "#22334a",
+              borderRadius: 16,
+              boxShadow: "0 2px 16px #22334a22",
+              padding: "32px 48px",
+              fontSize: 24,
+              fontWeight: 700,
+              zIndex: 10,
+              opacity: 0.97,
+              pointerEvents: "none",
+              transition: "opacity 0.2s",
+            }}
+          >
+            Merci pour votre vote !
+          </div>
+        )}
       </div>
       {/* Encart bas de page avec lien classement et nombre de matchs */}
       <div
